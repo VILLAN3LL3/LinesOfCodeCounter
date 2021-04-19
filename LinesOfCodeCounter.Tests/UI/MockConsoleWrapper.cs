@@ -2,7 +2,7 @@
 using System.Text;
 using LinesOfCodeCounter.UI;
 
-namespace LinesOfCodeCounter.Tests
+namespace LinesOfCodeCounter.Tests.UI
 {
     internal class MockConsoleWrapper : IConsole
     {

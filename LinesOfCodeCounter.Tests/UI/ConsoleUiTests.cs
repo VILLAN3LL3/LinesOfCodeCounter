@@ -4,7 +4,7 @@ using LinesOfCodeCounter.Model;
 using LinesOfCodeCounter.UI;
 using NUnit.Framework;
 
-namespace LinesOfCodeCounter.Tests
+namespace LinesOfCodeCounter.Tests.UI
 {
     [TestFixture]
     public class ConsoleUiTests
