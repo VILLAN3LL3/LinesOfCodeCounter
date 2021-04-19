@@ -1,12 +1,27 @@
-﻿using System;
+﻿using LinesOfCodeCounter.Model;
+using LinesOfCodeCounter.UI;
 
 namespace LinesOfCodeCounter
 {
-    class Program
+    internal static class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var consoleUi = new ConsoleUi(new ConsoleWrapper());
+            var interactor = new Interactor();
+            int totalLinesCount = 0;
+            int totalLinesOfCodeCount = 0;
+            string directory = args[0];
+
+            foreach (LinesOfCodeStat stat in interactor.GetLinesOfCodeStats(directory))
+            {
+                totalLinesCount += stat.LinesCount;
+                totalLinesOfCodeCount += stat.LinesOfCodeCount;
+                consoleUi.PrintLinesOfCodeStatToConsole(stat);
+            }
+
+            consoleUi.PrintLinesOfCodeSummaryToConsole(new LinesOfCodeSummary(totalLinesCount, totalLinesOfCodeCount));
+            consoleUi.WaitForInput();
         }
     }
 }

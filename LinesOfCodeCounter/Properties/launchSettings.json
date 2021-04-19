@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LinesOfCodeCounter": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Development\\CleanCodeSchulung"
+    }
+  }
+}

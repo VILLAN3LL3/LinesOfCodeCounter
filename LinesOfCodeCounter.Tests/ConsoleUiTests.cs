@@ -1,6 +1,7 @@
 ﻿using System;
 using FluentAssertions;
 using LinesOfCodeCounter.Model;
+using LinesOfCodeCounter.UI;
 using NUnit.Framework;
 
 namespace LinesOfCodeCounter.Tests
