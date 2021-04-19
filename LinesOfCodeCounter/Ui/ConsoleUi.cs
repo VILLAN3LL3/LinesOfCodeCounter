@@ -1,4 +1,5 @@
-﻿using LinesOfCodeCounter.Model;
+﻿using System.Globalization;
+using LinesOfCodeCounter.Model;
 
 namespace LinesOfCodeCounter.UI
 {
@@ -17,7 +18,7 @@ namespace LinesOfCodeCounter.UI
             _console.WriteLine($"   Lines of Code {FormatIntWithThousandSeparator(linesOfCodeSummary.TotalLinesOfCodeCount)}");
         }
 
-        private string FormatIntWithThousandSeparator(int value) => string.Format("{0:n0}", value);
+        private string FormatIntWithThousandSeparator(int value) => string.Format(CultureInfo.GetCultureInfo("de-DE"), "{0:n0}", value);
 
         public void WaitForInput() => _console.ReadLine();
     }
