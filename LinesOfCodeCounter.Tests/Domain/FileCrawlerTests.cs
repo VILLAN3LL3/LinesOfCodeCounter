@@ -22,7 +22,6 @@ namespace LinesOfCodeCounter.Tests.Domain
         [Test]
         public void Should_Find_Source_File_Names()
         {
-            // Arrange
             FileCrawler fileCrawler = CreateFileCrawler();
             string directory = "TestData";
             _subDirectoryReader.GetFiles("TestData", "*.cs").Returns(new string[] { @"TestData\TestData.cs" });
@@ -35,11 +34,9 @@ namespace LinesOfCodeCounter.Tests.Domain
                 @"TestData\TestDataSubDirectory\SubTestData.cs"
             };
 
-            // Act
             IEnumerable<string> result = fileCrawler.FindSourceFileNames(
                 directory);
 
-            // Assert
             result.Should().BeEquivalentTo(expectedResult);
         }
     }
